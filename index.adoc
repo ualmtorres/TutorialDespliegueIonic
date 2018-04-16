@@ -1,0 +1,95 @@
+////
+NO CAMBIAR!!
+Codificación, idioma, tabla de contenidos, tipo de documento
+////
+:encoding: utf-8
+:lang: es
+:toc: right
+:toc-title: Tabla de contenidos
+:doctype: book
+:imagesdir: ./images
+
+
+
+
+////
+Nombre y título del trabajo
+////
+# Despliegue de aplicaciones Ionic en dispositivos táctiles
+Desarrollo de Aplicaciones Híbridas
+Msáter TAII - UAL
+
+// NO CAMBIAR!! (Entrar en modo no numerado de apartados)
+:numbered!: 
+
+
+[abstract]
+## Resumen
+
+Veremos cómo llevar a un móvil o tablet una aplicación Ionic.
+
+.Objetivos
+
+* Conocer las configuraciones necesarias para poder compilar para IOS y para Android
+* Aprender a agregar y eliminar plataformas en nuestro proyecto de Ionic
+* Poder generar las apps e instalarlas en el dispositivo nativo
+
+// Entrar en modo numerado de apartados
+:numbered:
+
+## Introducción
+
+Siguiendo la https://ionicframework.com/docs/intro/deploying/[documentación oficial] para el despliegue en dispositivos Android necesitamos instalar:
+
+* Java JDK
+* Android Studio
+
+En Android Studio configuraremos con el SDK Manager los paquetes de la plataforma SDK de Android que necesitemos para la versión de Android de nuestro disposivo (p.e. Android 8.1 Oreo)
+
+[NOTE]
+====
+Es posible que la primera vez que usemos Android Studio nos pida instalar una serie de componentes y paquetes a lo que normalmente contestaremos que sí.
+====
+
+Las plataformas disponibles en nuestro proyecto para su despliegue en dispositivos están disponibles en la carpeta `platforms`. 
+
+1. Añadir el soporte para Android con 
+
++
+[source]
+----
+ionic cordova platform add android <1>
+----
+<1> Cambiar android por ios para añadir iOS como plataforma
+
+1. Hacer el build de la aplicación para poder usarla desde Android Studio
+
++
+[source]
+----
+ionic cordova build android <1>
+----
+<1> Cambiar android por ios para hacer el build para iOS
+
+Abrir el proyecto en Android Studio seleccionando la carpeta `platform/android` de nuestro proyecto.
+
+### Creación de un dispositivo virtual
+
+1. Seleccionar `Tools - AVD Manager` y pulsar el botón para crear un dispotivo virtual. Elegiremos la categoría y el tipo y procederemos a su creación.
+
+1. Descargar la imagen del SDK de la versión de Android elegida.
+
+### Despliegue de una aplicación
+
+1. Conectar el dispositivo al ordenador de desarrollo.
+
+1. Pulsar el botón Play en la barra de herramientas. En el cuadro de diálogo seleccionamos el dispositivo en el que se va a desplegar la aplicación
+
+[NOTE]
+====
+Para activar el Developer mode en un dispositivo Android, seleccionar Settings > About device > Build number y pulsar unas 10 veces seguidas hasta que aparezca el mensaje que se ha activado el modo de desarrollador.
+
+Dentro del modo desarrollador hay que activar la Depuración por USB.
+
+Al configurar Android Studio con un dispositivo hay que confirmar en el dispostivo la conexión al equipo donde está Android Studio
+====
