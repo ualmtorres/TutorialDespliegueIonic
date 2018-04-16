@@ -89,7 +89,7 @@ Abrir el proyecto en Android Studio seleccionando la carpeta `platform/android` 
 ====
 Para activar el Developer mode en un dispositivo Android, seleccionar Settings > About device > Build number y pulsar unas 10 veces seguidas hasta que aparezca el mensaje que se ha activado el modo de desarrollador.
 
-Dentro del modo desarrollador hay que activar la Depuración por USB.
+Dentro del modo desarrollador hay que activar la Depuración por USB y selecciona la configuración USB MTP (Media Transfer Protocol).
 
 Al configurar Android Studio con un dispositivo hay que confirmar en el dispostivo la conexión al equipo donde está Android Studio
 ====
